@@ -1,0 +1,397 @@
+html { scroll-behavior: smooth; }
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  color: #fff;
+  background:
+    linear-gradient(rgba(0,0,0,.6), rgba(0,0,0,.9)),
+    url("background.jpg");
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+/* NAV */
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 30px 8%;
+  display: flex;
+  justify-content: space-between;
+  z-index: 1000;
+  background: linear-gradient(to bottom, rgba(0,0,0,.9), transparent);
+}
+
+.logo {
+  font-size: .8rem;
+  letter-spacing: 4px;
+  font-weight: 700;
+}
+
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  margin-left: 30px;
+  font-size: .7rem;
+  letter-spacing: 2px;
+  transition: .3s;
+}
+
+.nav-links a:hover { color: #ff00ff; }
+
+/* HERO */
+.hero {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 0 10%;
+}
+
+.hero h1 {
+  font-size: clamp(3rem, 10vw, 6rem);
+  letter-spacing: 15px;
+  line-height: .9;
+  margin: 20px 0;
+}
+
+.subtitle {
+  font-size: .75rem;
+  letter-spacing: 8px;
+  color: #bbb;
+}
+
+.explore-btn {
+  display: inline-block;
+  margin-top: 30px;
+  padding: 15px 35px;
+  border: 1px solid #fff;
+  text-decoration: none;
+  color: #fff;
+  letter-spacing: 3px;
+  transition: .4s;
+}
+
+.explore-btn:hover {
+  background: #fff;
+  color: #000;
+}
+
+/* SOCIAL */
+.social-links {
+  margin-top: 40px;
+}
+
+.social-links a {
+  margin-right: 25px;
+  font-size: 1.2rem;
+  color: #fff;
+  opacity: .6;
+  transition: .3s;
+}
+
+.social-links a:hover {
+  opacity: 1;
+  transform: translateY(-3px);
+}
+
+/* MAIN */
+.main-container {
+  padding: 0 10% 100px;
+}
+
+.glass-section {
+  background: rgba(0,0,0,.65);
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(255,255,255,.1);
+  padding: 80px 60px;
+  margin-bottom: 100px;
+  max-width: 1000px;
+}
+
+/* HEADERS */
+.section-header {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 40px;
+}
+
+.number {
+  color: #ff00ff;
+  font-weight: 700;
+}
+
+h2 {
+  letter-spacing: 8px;
+  text-transform: uppercase;
+}
+
+/* TEXT */
+.description {
+  color: #ccc;
+  margin-bottom: 20px;
+  max-width: 800px;
+}
+
+.highlight {
+  font-size: 1.2rem;
+  color: #fff;
+}
+
+/* MOTTO */
+.motto {
+  display: flex;
+  gap: 20px;
+  margin-top: 40px;
+  font-size: .75rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #ff00ff;
+}
+
+.motto span {
+  border-left: 2px solid #ff00ff;
+  padding-left: 10px;
+}
+
+/* WORK */
+.work-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px 30px;
+}
+
+.work-img-container {
+  height: 350px;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,.1);
+}
+
+.work-img-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: .6s;
+}
+
+.work-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(255,0,255,.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: .4s;
+}
+
+.work-card:hover img { transform: scale(1.1); }
+.work-card:hover .work-overlay { opacity: 1; }
+
+.work-info {
+  margin-top: 15px;
+}
+
+.work-info p {
+  color: #ff00ff;
+  font-size: .75rem;
+}
+
+/* EXPERIENCE */
+.exp-item {
+  border-bottom: 1px solid rgba(255,255,255,.1);
+  padding-bottom: 20px;
+  margin-bottom: 40px;
+}
+
+.date {
+  color: #ff00ff;
+  font-size: .75rem;
+}
+
+/* FORM */
+input, textarea {
+  width: 100%;
+  background: rgba(255,255,255,.05);
+  border: 1px solid rgba(255,255,255,.2);
+  padding: 15px;
+  color: #fff;
+}
+
+.submit-btn {
+  background: #ff00ff;
+  border: none;
+  padding: 15px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  cursor: pointer;
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 50px;
+  font-size: .7rem;
+  opacity: .5;
+}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+  .work-grid{grid-template-columns:1fr}
+  .glass-section{padding:40px 20px}
+}
+
+/* PRACTICAL LEARNING (TEXT-ONLY) */
+.practical-list {
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+}
+
+.practice-item h3 {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+}
+
+.practice-item p {
+  color: #ccc;
+  max-width: 800px;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.practice-item .tech {
+  display: inline-block;
+  margin-top: 8px;
+  font-size: 0.75rem;
+  letter-spacing: 2px;
+  color: #ff00ff;
+  text-transform: uppercase;
+}
+
+/* CERTIFICATIONS & LEARNING */
+.cert-item {
+  margin-bottom: 40px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 20px;
+}
+
+.cert-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.cert-item h3 {
+  font-size: 1rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.platform {
+  font-size: 0.8rem;
+  color: #bbb;
+  margin: 8px 0 12px 0;
+}
+
+.cert-desc {
+  font-size: 0.85rem;
+  color: #aaa;
+  max-width: 750px;
+  line-height: 1.6;
+}
+
+/* STATUS BADGES */
+.status {
+  font-size: 0.65rem;
+  padding: 4px 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  border: 1px solid;
+}
+
+.status.in-progress {
+  color: #ff00ff;
+  border-color: #ff00ff;
+}
+
+.status.completed {
+  color: #00ff9c;
+  border-color: #00ff9c;
+}
+
+.status.ongoing {
+  color: #00bfff;
+  border-color: #00bfff;
+}
+
+/* TECHNICAL SKILLS */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px 30px;
+}
+
+.skill-block h3 {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 0.95rem;
+  margin-bottom: 15px;
+  color: #fff;
+}
+
+.skill-block ul {
+  list-style: none;
+}
+
+.skill-block ul li {
+  font-size: 0.85rem;
+  color: #ccc;
+  margin-bottom: 10px;
+  position: relative;
+  padding-left: 15px;
+}
+
+.skill-block ul li::before {
+  content: "▸";
+  position: absolute;
+  left: 0;
+  color: #ff00ff;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* FOOTER SOCIAL ICONS */
+.footer-socials {
+  display: flex;
+  justify-content: center;
+  gap: 35px;
+  margin-bottom: 40px;
+}
+
+.footer-socials a {
+  color: #fff;
+  font-size: 1.4rem;
+  opacity: 0.6;
+  transition: 0.3s ease;
+}
+
+.footer-socials a:hover {
+  opacity: 1;
+  color: #ff00ff;
+  transform: translateY(-4px);
+}
